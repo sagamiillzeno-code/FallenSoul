@@ -6,7 +6,7 @@ import java.util.Map;
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
 
-import net.minecraft.entity.EntityEquipmentSlot;
+import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
