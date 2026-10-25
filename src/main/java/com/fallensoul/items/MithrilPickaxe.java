@@ -4,7 +4,7 @@ package com.fallensoul.items;
 import com.google.common.collect.Multimap;
 
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.entity.EntityEquipmentSlot;
+import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.item.ItemPickaxe;
 import net.minecraft.item.ItemStack;
