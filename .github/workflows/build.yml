@@ -1,3 +1,33 @@
+
+name: Build FallenSoul
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Java 8
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '8'
+
+      - name: Install Gradle 4.9
+        run: |
+          set -e
+          curl -L --fail \
+            -o gradle.zip \
+            https://services.gradle.org/distributions/gradle-4.9-bin.zip
+          unzip -q gradle.zip
+          echo "$GITHUB_WORKSPACE/gradle-4.9/bin" >> "$GITHUB_PATH"
+
       - name: Download Forge userdev3
         run: |
           set -e
@@ -8,3 +38,11 @@
 
       - name: Build FallenSoul
         run: gradle --no-daemon clean build
+
+      - name: Upload mod JAR
+        uses: actions/upload-artifact@v4
+        with:
+          name: FallenSoul-1.12.2
+          path: build/libs/*.jar
+          if-no-files-found: error
+          
