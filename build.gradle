@@ -8,13 +8,11 @@ buildscript {
     }
 
     dependencies {
-        
-classpath 'net.minecraftforge.gradle:ForgeGradle:3.+'
-
+        classpath 'net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT'
     }
 }
 
-apply plugin: 'net.minecraftforge.gradle'
+apply plugin: 'net.minecraftforge.gradle.forge'
 
 version = '1.0.0'
 group = 'com.fallensoul'
@@ -24,21 +22,13 @@ sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
 minecraft {
-    mappings channel: 'snapshot', version: '20171003-1.12'
-
-    runs {
-        client {
-            workingDirectory project.file('run')
-        }
-
-        server {
-            workingDirectory project.file('run')
-        }
-    }
+    version = '1.12.2-14.23.5.2859'
+    runDir = 'run'
+    mappings = 'snapshot_20171003'
 }
 
-dependencies {
-    minecraft 'net.minecraftforge:forge:1.12.2-14.23.5.2859'
+repositories {
+    mavenCentral()
 }
 
 processResources {
