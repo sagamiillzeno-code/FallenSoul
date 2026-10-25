@@ -1,0 +1,16 @@
+
+[
+  {
+    "modid": "fallensoul",
+    "name": "FallenSoul",
+    "description": "A magic-focused mod about mystical transformations, rare ores and the power of fallen souls.",
+    "version": "${version}",
+    "mcversion": "${mcversion}",
+    "url": "",
+    "authorList": ["FallenSoul Team"],
+    "credits": "Created for Minecraft Forge 1.12.2",
+    "logoFile": "",
+    "screenshots": [],
+    "dependencies": []
+  }
+]
