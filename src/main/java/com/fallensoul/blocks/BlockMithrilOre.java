@@ -16,7 +16,7 @@ public class BlockMithrilOre extends BlockOre {
 
         setHardness(4.0F);
         setResistance(8.0F);
-        setHarvestLevel("pickaxe", 2);
+        setHarvestLevel("pickaxe", 3);
         setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
     }
 
