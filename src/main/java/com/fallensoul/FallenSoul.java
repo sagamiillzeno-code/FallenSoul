@@ -4,7 +4,11 @@ package com.fallensoul;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.registry.GameRegistry;
+
 import org.apache.logging.log4j.Logger;
+
+import com.fallensoul.world.WorldGenMithrilOre;
 
 @Mod(
     modid = FallenSoul.MODID,
@@ -28,6 +32,12 @@ public class FallenSoul {
 
     @Mod.EventHandler
     public void init(FMLInitializationEvent event) {
+        GameRegistry.registerWorldGenerator(
+            new WorldGenMithrilOre(),
+            0
+        );
+
+        logger.info("FallenSoul: Mithril ore generator registered!");
         logger.info("FallenSoul: Magic awakens!");
     }
 }
