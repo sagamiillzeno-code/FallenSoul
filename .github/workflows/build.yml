@@ -28,21 +28,5 @@ jobs:
           unzip -q gradle.zip
           echo "$GITHUB_WORKSPACE/gradle-4.9/bin" >> "$GITHUB_PATH"
 
-      - name: Download Forge userdev3
-        run: |
-          set -e
-          mkdir -p libs
-          curl -L --fail \
-            -o libs/forge-userdev3.jar \
-            https://maven.minecraftforge.net/net/minecraftforge/forge/1.12.2-14.23.5.2859/forge-1.12.2-14.23.5.2859-userdev3.jar
-
-      - name: Build FallenSoul
-        run: gradle --no-daemon clean build
-
-      - name: Upload mod JAR
-        uses: actions/upload-artifact@v4
-        with:
-          name: FallenSoul-1.12.2
-          path: build/libs/*.jar
-          if-no-files-found: error
+      
           
