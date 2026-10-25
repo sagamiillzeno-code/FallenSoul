@@ -3,16 +3,16 @@ buildscript {
     repositories {
         mavenCentral()
         maven {
-            name = "forge"
-            url = "https://maven.minecraftforge.net/"
+            url = 'https://maven.minecraftforge.net/'
         }
     }
+
     dependencies {
-        classpath 'net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT'
+        classpath 'net.minecraftforge.gradle:ForgeGradle:3.0.200'
     }
 }
 
-apply plugin: 'net.minecraftforge.gradle.forge'
+apply plugin: 'net.minecraftforge.gradle'
 
 version = '1.0.0'
 group = 'com.fallensoul'
@@ -22,16 +22,21 @@ sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
 minecraft {
-    version = '1.12.2-14.23.5.2859'
-    runDir = 'run'
-    mappings = 'stable_39'
-}
+    mappings channel: 'snapshot', version: '20171003-1.12'
 
-repositories {
-    mavenCentral()
+    runs {
+        client {
+            workingDirectory project.file('run')
+        }
+
+        server {
+            workingDirectory project.file('run')
+        }
+    }
 }
 
 dependencies {
+    minecraft 'net.minecraftforge:forge:1.12.2-14.23.5.2859'
 }
 
 processResources {
