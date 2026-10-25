@@ -3,13 +3,13 @@ package com.fallensoul.world;
 
 import java.util.Random;
 
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.World;
-import net.minecraft.world.chunk.IChunkGenerator;
-import net.minecraft.world.chunk.IChunkProvider;
-import net.minecraft.world.gen.feature.WorldGenMinable;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
+import net.minecraft.world.chunk.IChunkProvider;
+import net.minecraft.world.gen.IChunkGenerator;
+import net.minecraft.world.gen.feature.WorldGenMinable;
 import net.minecraftforge.fml.common.IWorldGenerator;
 
 import com.fallensoul.blocks.ModBlocks;
@@ -19,7 +19,8 @@ public class WorldGenMithrilOre implements IWorldGenerator {
     private final WorldGenMinable generator;
 
     public WorldGenMithrilOre() {
-        IBlockState oreState = ModBlocks.MITHRIL_ORE.getDefaultState();
+        IBlockState oreState =
+                ModBlocks.MITHRIL_ORE.getDefaultState();
 
         generator = new WorldGenMinable(
                 oreState,
